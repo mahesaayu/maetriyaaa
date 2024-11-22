@@ -1,44 +1,103 @@
+/* General body styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
+/* Header styles */
 header {
-    background-color: #333;
+    background-color: #726767;
     color: white;
-    padding: 15px;
+    padding: 20px 0;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Navigation links */
 nav a {
     color: white;
-    margin: 0 10px;
+    margin: 0 20px;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
+    color: #ff7f50;
     text-decoration: underline;
 }
 
+/* Main content area */
 main {
-    padding: 20px;
-}
-
-h1{
-    color: #fcfcfc;
-}
-h2 {
-    color: #333;
-}
-
-.gallery img {
-    width: 100px;
-    margin: 5px;
+    padding: 30px;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 1200px;
     border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
+/* Header for main content */
+h1 {
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #444;
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Gallery styling */
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.gallery-item {
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+figcaption {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    nav a {
+        margin: 0 5px;
+        font-size: 14px;
+    }
+
+    .gallery-item img {
+        width: 90%;
+    }
 }
